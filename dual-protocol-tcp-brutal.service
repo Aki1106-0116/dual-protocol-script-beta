@@ -1,0 +1,14 @@
+[Unit]
+Description=Dual Protocol Script - TCP Brutal v2 Reality per-IP downlink rules
+After=network-online.target xray.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/lib/dual-protocol-script/tcp-brutal-manager.sh run
+Restart=always
+RestartSec=5s
+TimeoutStopSec=15s
+
+[Install]
+WantedBy=multi-user.target
